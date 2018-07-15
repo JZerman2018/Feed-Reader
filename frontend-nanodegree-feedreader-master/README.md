@@ -17,26 +17,17 @@ I will learn how to use Jasmine to write a number of tests against a pre-existin
 How to run this test:
 
 Option-1 - Easy:
-
 Click "Clone in Desktop" / "Download ZIP" in the repository at https://github.com/JZerman2018/Feed-Reader.git
-
 Open the folder
-
 Open index.html in your preferred browser
-
 There will be several test results at the bottom of the screen that says "~ specs, ~ failures"
 
 
 Option-2 Using Terminal and Node.js:
-
 Pre-requisite : Install node.js, npm, and git
-
 Clone the repository. Open your terminal and run git clone https://github.com/JZerman2018/Feed-Reader.git
-
 Install http-server by npm install -g http-server
-
 Then run http-server in terminal inside the root of the cloned repo.
-
 Go to the URL http://localhost:8080/ in browser.
 
 # Dependencies:
