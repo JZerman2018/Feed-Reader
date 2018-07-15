@@ -53,7 +53,7 @@ Implement error handling for undefined variables and out-of-bound array access.
 
 When complete - all of your tests should pass. 
  
-##Testing the Feed Reader Project
+# Testing the Feed Reader Project
 
 How to run this test:
 
@@ -77,7 +77,7 @@ Install http-server by npm install -g http-server
 Then run http-server in terminal inside the root of the cloned repo.
 Go to the URL http://localhost:8080/ in browser.
 
-##Dependencies:
+# Dependencies:
 
 JavaScript
 
