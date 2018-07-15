@@ -13,6 +13,7 @@ $(function() {
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
+   //Testing suite of RSS feeds
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -21,8 +22,10 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+        //Ensures all feeds are defined and not empty
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
+            expect(allFeeds instanceof Array).toBeTruthy();
             expect(allFeeds.length).not.toBe(0);
         });
 
@@ -31,12 +34,28 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+        // Ensures all feeds has URL defined and is not empty
+        it("feeds have URL", function() {
+            allFeeds.forEach(function(feed) {
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
+                expect(feed.url).toMatch(/^(http|https):\/\//);
+            });
+        });
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        //Make sure all feeds have names and not empty
+        it("feeds have names", function() {
+            allFeeds.forEach(function(feed) {
+            expect(feed.name).toBeDefined();
+            expect(typeof feed.name).toBe('string');
+            expect(feed.name.length).not.toBe(0);
+            });
+        });
     });
 
 
