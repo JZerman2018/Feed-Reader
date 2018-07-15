@@ -101,6 +101,17 @@ $(function() {
          */
 
     //Test suite for "Initial Entries"
+    describe('Initial Entries', function() {
+    // Using Jasmine beforeEach and done() functions with loadFeed for async test
+    beforeEach(function (done) {
+        loadFeed(0, done);
+    });
+
+    //This test checks for a single .entry element within the .feed container
+    it('a single .entry element within .feed container', function () {
+        expect($('.feed .entry').length).toBeGreaterThan(0);
+    });
+    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
@@ -108,4 +119,29 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+    //Test suite for "New Feed Selection"
+    describe('New Feed Selection', function() {
+        //This test will check if content changes after loading a new feed into the loadFeed function
+        let initialFeed;
+        let updatedFeed;
+    //This function runs initial loadFeed function with ID of 0 for (default/initial) and 1 (second)
+
+    beforeEach(function (done) {
+        loadFeed(0, function() {
+            initialFeed = $('.feed').text();
+
+        loadFeed(1, function() {
+            updatedFeed = $('.feed').text();
+            done();
+        });
+        });
+    });
+
+    //This test will check if feeds are different
+    it('shows new feed', function() {
+        expect(updatedFeed).not.toBe(initialFeed);
+    });
+
+    });     
 }());
