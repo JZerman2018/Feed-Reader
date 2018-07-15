@@ -80,6 +80,9 @@ Go to the URL http://localhost:8080/ in browser.
 ##Dependencies:
 
 JavaScript
+
 Jasmine 2.1.2
+
 JQuery 2.1.1
+
 Handlebars 2.0.0
